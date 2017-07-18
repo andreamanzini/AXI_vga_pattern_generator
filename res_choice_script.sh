@@ -1,5 +1,10 @@
 #!/bin/bash
 
+BASEADDRESS=0x43C00000
+
+BASEADDRESSREG0=BASEADDRESS
+BASEADDRESSREG1=$(( $BASEADDRESSREG0 + 4 ))
+
 echo "Select a resolution for the vga output(1/2/3/4):"
 echo
 echo "1.\\tVGA"
@@ -8,9 +13,6 @@ echo "3.\\HD"
 echo "4.\\FHD"
 echo
 read selection
-
-BASEADDRESSREG0=0x43C00000
-BASEADDRESSREG1=0x43C00004
 
 if (( selection == 1 ))
 then
